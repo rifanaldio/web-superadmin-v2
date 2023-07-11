@@ -5,6 +5,9 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import '@client/pegadaian-ui-kit-react';
+import { RouterProvider } from 'react-router-dom';
+import router from './routes/router';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -12,7 +15,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
     </Provider>
   </React.StrictMode>
 );
