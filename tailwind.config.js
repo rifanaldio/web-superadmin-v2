@@ -6,10 +6,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors : {
+        'primary' : "#004D43",
+        'hovertext' : 'rgb(0, 171, 78)',
+        'bghover' : 'rgb(230, 246, 234)'
+      },
+      fontFamily : {
+        'nutino' : "Nunito Sans"
+      },
       backgroundImage: {
         'login' : "url('/src/assets/login.jpg')",
         // 'logopegadaian' : "url('/src/assets/logo=pegadaian.jpg')"
-      }
+      },
     },
   },
   plugins: [],

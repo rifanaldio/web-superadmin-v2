@@ -70,14 +70,16 @@ const Login = ({
                                         Email
                                     </label>
                                     <input
-                                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        className="shadow border border-red-500 invalid:border-red-500 valid:border-lime-500 peer appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                         value={email}
                                         onChange={handleChange(setEmail)}
                                         id="email"
                                         type="email"
-                                        placeholder="email"
+                                        placeholder="yourname@gmail.com"
                                     />
-                                    <p className="hidden invalid:block text-red-500 text-xs italic">Please choose a password.</p>
+                                    <p class="mt-2 invisible peer-invalid:visible text-red-500 text-xs italic">
+                                        Please provide a valid email address.
+                                    </p>
                                 </div>
                                 {
                                     !inForget && (
