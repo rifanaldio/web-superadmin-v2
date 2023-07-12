@@ -9,10 +9,6 @@ function DashboardPage() {
       name : "Dashboard",
       link : '/superadmin/dashboard'
     },
-    {
-      name : "Tester",
-      link : '/superadmin/tester'
-    }
   ]
   return (
     <Papper
