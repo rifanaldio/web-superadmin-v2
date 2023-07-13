@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors : {
-        'primary' : "#004D43",
+        'primary' : '#004D43',
+        'primaryyellow' : 'rgb(191, 215, 48)',
         'hovertext' : 'rgb(0, 171, 78)',
         'bghover' : 'rgb(230, 246, 234)'
       },
@@ -16,7 +17,6 @@ module.exports = {
       },
       backgroundImage: {
         'login' : "url('/src/assets/login.jpg')",
-        // 'logopegadaian' : "url('/src/assets/logo=pegadaian.jpg')"
       },
     },
   },

@@ -11,12 +11,12 @@ const MenuItem = ({ label, path, childPath, icon }) => {
     };
 
     return (
-        <Link onClick={childPath && (childPath.length != 0 ? toggleDropdown : null)} to={path} className="block font-nutino my-2 py-2 px-4 hover:bg-bghover hover:text-white rounded group hover:ring-1 hover:ring-amber-400  ">
-            <div className="flex items-center">
+        <Link onClick={childPath && (childPath.length != 0 ? toggleDropdown : null)} to={path} className="block font-nutino my-2 py-2 px-4 hover:bg-primary hover:text-white rounded group hover:ring-1 hover:ring-primaryyellow  ">
+            <div className="flex items-center px-2">
                 <span className="pr-3">
                     {icon}
                 </span>
-                <span className="space-x-2 text-sm group-hover:text-hovertext group-hover:font-bold drop-shadow-sm">
+                <span className="space-x-2 text-sm group-hover:text-white drop-shadow-sm">
                     {label}
                 </span>
                 {(childPath && childPath.length != 0) &&

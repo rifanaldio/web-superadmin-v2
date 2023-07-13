@@ -8,7 +8,22 @@ import {Button} from "@client/pegadaian-ui-kit-react"
 const Navbar = ({
 
 }) => {
-
+    const menu = [
+        {
+            label : 'Profile',
+            path : '/superadmin/profile',
+            icon : <></>
+        },
+        {
+            label : 'Lock Screen',
+            path : '/superadmin/lock-screen',
+            icon : <></>
+        },
+        {
+            label : 'Log Out',
+            icon : <></>
+        },
+    ]
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
@@ -48,32 +63,45 @@ const Navbar = ({
                                                 leaveFrom="translate-x-0"
                                                 leaveTo="-translate-x-full"
                                             >
-                                                <div className="absolute top-12 right-10 border-2 rounded-lg bg-white z-50">
+                                                <div className="absolute top-12 right-10 border-2 rounded-lg bg-white z-50 shadow-lg">
                                                     <Menu.Items static>
                                                         <Menu.Item>
                                                             {({ active }) => (
-                                                                <a
+                                                                <Link
                                                                     className={`${active
-                                                                        ? 'bg-gray-100 text-gray-900'
+                                                                        ? 'bg-bghover text-gray-900'
                                                                         : 'text-gray-700'
                                                                         } block px-4 py-2 text-sm`}
-                                                                    href="/account-settings"
+                                                                    to={`/superadmin/profile`}
                                                                 >
-                                                                    Account settings
-                                                                </a>
+                                                                    Profile
+                                                                </Link>
                                                             )}
                                                         </Menu.Item>
                                                         <Menu.Item>
                                                             {({ active }) => (
-                                                                <a
+                                                                <Link
                                                                     className={`${active
                                                                         ? 'bg-gray-100 text-gray-900'
                                                                         : 'text-gray-700'
                                                                         } block px-4 py-2 text-sm`}
-                                                                    href="/documentation"
+                                                                    to={"/documentation"}
                                                                 >
-                                                                    Documentation
-                                                                </a>
+                                                                    Lock Screen
+                                                                </Link>
+                                                            )}
+                                                        </Menu.Item>
+                                                        <Menu.Item>
+                                                            {({ active }) => (
+                                                                <Link
+                                                                    className={`${active
+                                                                        ? 'bg-gray-100 text-gray-900'
+                                                                        : 'text-gray-700'
+                                                                        } block px-4 py-2 text-sm`}
+                                                                    to={"/documentation"}
+                                                                >
+                                                                    Log Out
+                                                                </Link>
                                                             )}
                                                         </Menu.Item>
                                                         <Menu.Item disabled>
