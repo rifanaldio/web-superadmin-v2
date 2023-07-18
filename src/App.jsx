@@ -4,15 +4,20 @@ import ForgetPage from './features/auth/ForgetPage';
 import './index.css'
 import DashboardPage from './features/dashboard/DashboardPage';
 import GadaiTabunganEmas from './features/gadai/gadai_tabungan_emas/GadaiTabunganEmas';
+import Pages from './pages/Pages';
+
 function App() {
 
   return (
     <>
     <BrowserRouter>
         <Routes>
+          {/* <Route path='/superadmin/login' render={props => {
+            <Pages {...props} elemetPages={<LoginPage />} title="Superadmin | Login"/>
+          }} /> */}
           <Route path='/superadmin/login' element={<LoginPage />} />
           <Route path='/superadmin/forget' element={<ForgetPage />} />
-          <Route path='/superadmin/dashboard' element={<DashboardPage />} />
+          <Route path='/superadmin/dashboard' element={<DashboardPage />}/>
           <Route path='/superadmin/gadai_tabungan_emas' element={<GadaiTabunganEmas />} />
         </Routes>
     </BrowserRouter>

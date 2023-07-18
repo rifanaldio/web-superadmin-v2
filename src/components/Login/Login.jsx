@@ -17,9 +17,6 @@ const Login = ({
 
     const { user, isSuccess } = useSelector((state) => state.auth);
 
-    console.log(user);
-    console.log(isSuccess);
-
     useEffect(() => {
         if (user || isSuccess) {
             navigate(`/superadmin/dashboard`);
@@ -70,7 +67,8 @@ const Login = ({
                                         Email
                                     </label>
                                     <input
-                                        className="shadow border border-red-500 invalid:border-red-500 valid:border-lime-500 peer appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        className="shadow border
+                                        invalid:border-red-500 valid:border-lime-500 peer appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                         value={email}
                                         onChange={handleChange(setEmail)}
                                         id="email"

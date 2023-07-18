@@ -11,7 +11,7 @@ const MenuItem = ({ label, path, childPath, icon }) => {
     };
 
     return (
-        <Link onClick={childPath && (childPath.length != 0 ? toggleDropdown : null)} to={path} className="block font-nutino my-2 py-2 px-4 hover:bg-primary hover:text-white rounded group hover:ring-1 hover:ring-primaryyellow  ">
+        <Link onClick={childPath && (childPath.length != 0 ? toggleDropdown : null)} to={path} className="block font-nutino my-2 py-2 px-4 hover:bg-primary active:bg-primary active:outline-none hover:text-white rounded group hover:ring-1 hover:ring-primaryyellow  ">
             <div className="flex items-center px-2">
                 <span className="pr-3">
                     {icon}

@@ -1,17 +1,18 @@
-import React, { Children } from "react";
+import React from "react";
 
 const Grid = ({
-    grid = "",
-    small = "",
-    large = "",
-    xl = "",
-    gap = "",
+    className = "",
+    grid = null,
+    small = null,
+    large = null,
+    xl = null,
+    gap = null,
     children
     
 }) => {
   return (
     <>
-    <div className={`grid grid-cols-${grid} sm:grid-cols-${small} lg:grid-cols-${large} xl:grid-cols-${xl} gap-${gap} w-screen`}>
+    <div className={`${className} grid grid-cols-${grid} sm:grid-cols-${small} lg:grid-cols-${large} xl:grid-cols-${xl} gap-${gap} w-screen`}>
         {children}
     </div>
     </>

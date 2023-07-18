@@ -12,8 +12,6 @@ const Layout = ({
 
   const [open, setOpen] = useState(false)
 
-  console.log(open);
-
   const handleOpen = () => {
     setOpen(!open)
   }
@@ -44,7 +42,7 @@ const Layout = ({
           {/* Hidden When Resolution LG Start */}
           <button
             onClick={() => handleOpen()}
-            className="inline-flex items-center p-2 mt-2 mb-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+            className="inline-flex items-center p-2 mt-2 mb-2 mx-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
             <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path clip-rule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
             </svg>
@@ -60,28 +58,26 @@ const Layout = ({
             />
           </div>
         </div>
-        <main className="overflow-y-auto h-screen w-full bg-slate-100">
+        <main className="h-full w-full bg-slate-100 overflow-hidden font-nutino">
           {
             useBreadcumb && (
               <div className="w-full bg-white p-2">
                 <Breadcrumb data={breadcumb} />
               </div>
-
             )
           }
-          <div className={`mt-3 ml-3 ${fit && `bg-white rounded-tl-lg rounded-bl-lg`} fixed w-full h-full`}>
-            <div className="py-5 px-2 w-full md:w-[84%] h-full overflow-auto">
+          <div className={`my-3 mx-3 ${fit && `bg-white rounded-tl-lg rounded-bl-lg`}`}>
+            <div className="py-5 mb-20 pl-2 w-full max-h-[49rem] overflow-y-auto overflow-x-hidden">
               {children}
             </div>
           </div>
           <footer className="fixed bottom-0 flex bg-white w-full">
             <span className="ml-4 py-1 text- text-xs">
-              2023 PT PEGADAIAN.
+            &copy; 2023 PT PEGADAIAN.
             </span>
           </footer>
         </main>
       </div>
-
     </div>
 
   );
