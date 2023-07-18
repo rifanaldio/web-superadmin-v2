@@ -1,21 +1,18 @@
 import React, { useEffect } from "react";
 
 const Pages = ({
-    elemetPages,
-    title
-}) => { 
+  elemetPages,
+  title
+}) => {
 
+  useEffect(() => {
+    document.title = title
+  }, [title]);
 
-    console.log(title);
-
-    useEffect(() => {
-            document.title = title
-    }, [title]);
-    
 
   return (
     <>
-    {elemetPages}
+      {elemetPages}
     </>
   );
 }

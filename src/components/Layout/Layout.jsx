@@ -38,7 +38,7 @@ const Layout = ({
         <Navbar />
       </div>
       <div className="pt-15 flex flex-col md:flex-row h-screen">
-        <div className="lg:w-64 lg:pb-2 bg-white">
+        <div className="lg:w-72 lg:pb-2 bg-white">
           {/* Hidden When Resolution LG Start */}
           <button
             onClick={() => handleOpen()}
@@ -67,7 +67,7 @@ const Layout = ({
             )
           }
           <div className={`my-3 mx-3 ${fit && `bg-white rounded-tl-lg rounded-bl-lg`}`}>
-            <div className="py-5 mb-20 pl-2 w-full max-h-[49rem] overflow-y-auto overflow-x-hidden">
+            <div className="py-5 mb-20 pl-2 w-full max-h-[49rem] sm:max-h-[50rem] md:max-h-[53rem] lg:max-h-[55rem] overflow-y-auto overflow-x-hidden">
               {children}
             </div>
           </div>

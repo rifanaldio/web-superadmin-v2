@@ -13,7 +13,6 @@ const Sidebar = ({
     onClose = null
 }) => {
 
-
     const handleClose = () => {
         onClose()
     }
@@ -23,6 +22,7 @@ const Sidebar = ({
             children: [
                 {
                     label: 'Dashboard',
+                    id: 'dashboard',
                     path: '/superadmin/dashboard',
                     icon: <AiOutlineHome />
                 }
@@ -33,6 +33,7 @@ const Sidebar = ({
             children: [
                 {
                     label: 'Gadai Tabungan Emas',
+                    id: 'gadai_tabungan_emas',
                     path: '/superadmin/gadai_tabungan_emas',
                     icon: <AiOutlineGold />,
                     childPath: []
@@ -161,7 +162,7 @@ const Sidebar = ({
                                 as="div"
                                 id="modal"
                                 className="relative z-50 overflow-y-auto"
-                                onClose={() => handleClose()}
+                                onClose={() => {}}
                             >
                                 <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
                                 <div className="fixed inset-0 overflow-y-auto">
@@ -180,6 +181,7 @@ const Sidebar = ({
                                                         <ul className="">
                                                             {menuItem.children.map((childItem, childIndex) => (
                                                                 <MenuItem
+                                                                    id={childItem.id}
                                                                     key={childIndex}
                                                                     label={childItem.label}
                                                                     path={childItem.path}
@@ -207,6 +209,7 @@ const Sidebar = ({
                                     <ul className="">
                                         {menuItem.children.map((childItem, childIndex) => (
                                             <MenuItem
+                                                id={childItem.id}
                                                 key={childIndex}
                                                 label={childItem.label}
                                                 path={childItem.path}

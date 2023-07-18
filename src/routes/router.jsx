@@ -4,23 +4,23 @@ import ForgetPage from "../features/auth/ForgetPage";
 import DashboardPage from "../features/dashboard/DashboardPage";
 import GadaiTabunganEmas from "../features/gadai/gadai_tabungan_emas/GadaiTabunganEmas";
 import Pages from "../pages/Pages";
+import { URL } from "../util/Constant";
 
 const router = createBrowserRouter([
     {
-        path:"/superadmin/login",
+        path:`${URL}/login`,
         element : <Pages elemetPages={<LoginPage />} title="Login - Pegadaian" />,
     },
     {
-        path:"/superadmin/forget",
+        path:`${URL}/forget`,
         element : <Pages elemetPages={<ForgetPage />} title="Forget - Pegadaian" />,
     },
     {
-        path:"/superadmin/dashboard",
-        title : "dashboard",
+        path:`${URL}/dashboard`,
         element : <Pages elemetPages={<DashboardPage />} title="Dashboard - Pegadaian" />,
     },
     {
-        path:"/superadmin/gadai_tabungan_emas",
+        path:`${URL}/gadai_tabungan_emas`,
         element : <Pages elemetPages={<GadaiTabunganEmas />} title="Gadai Tabungan Emas - Pegadaian" />,
     },
 

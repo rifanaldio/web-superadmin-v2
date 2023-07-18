@@ -121,12 +121,12 @@ const DashboardPage = ({
         <>
           <div className="flex flex-col mr-4 mt-4 font-nutino">
             {/* Card Total */}
-            <div className="w-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-4 gap-6">
+            <div className="w-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-6 xl:gap-6">
               {
-                cardTotal.map((e) => {
+                cardTotal.map((e,i) => {
                   return (
                     <Card
-                      id={e.id}
+                      id={i}
                       label={e.label}
                       icon={e.icon}
                       number={e.value}
@@ -146,13 +146,12 @@ const DashboardPage = ({
             // color="primary"
             />
 
-            <div className="w-full grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 md:gap-4 gap-6 mt-7">
+            <div className="w-full grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 md:gap-6 gap-6 mt-7">
               {
-                gadai.map((e) => {
+                gadai.map((e,i) => {
                   return (
                     <Card
-                      className
-                      id={e.id}
+                      id={i}
                       label={e.label}
                       icon={e.icon}
                       number={e.value}

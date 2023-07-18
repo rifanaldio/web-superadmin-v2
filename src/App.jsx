@@ -12,9 +12,6 @@ function App() {
     <>
     <BrowserRouter>
         <Routes>
-          {/* <Route path='/superadmin/login' render={props => {
-            <Pages {...props} elemetPages={<LoginPage />} title="Superadmin | Login"/>
-          }} /> */}
           <Route path='/superadmin/login' element={<LoginPage />} />
           <Route path='/superadmin/forget' element={<ForgetPage />} />
           <Route path='/superadmin/dashboard' element={<DashboardPage />}/>
