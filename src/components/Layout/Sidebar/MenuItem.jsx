@@ -20,15 +20,15 @@ const MenuItem = ({ id, label, path, childPath, icon }) => {
             key={id}
             onClick={childPath && (childPath.length != 0 ? toggleDropdown : null)}
             to={path}
-            className={`block font-nutino my-2 py-2 px-4 hover:bg-primary hover:text-white rounded group hover:ring-1 hover:ring-primaryyellow 
-                    ${thisPath === id ? `active bg-primary text-white ring-1 ring-primaryyellow` : 'bg-none'}
+            className={`block font-nutino my-2 py-2 px-4 dark:text-blue-gray-400 hover:bg-primary hover:text-white rounded group hover:ring-1 dark:ring-white hover:ring-primaryyellow 
+                    ${thisPath === id ? `active bg-primary text-white ring-1 ring-primaryyellow dark:ring-none dark:ring-white` : 'bg-none'}
                     `}
         >
             <div className="flex items-center px-2">
-                <span className="pr-3">
+                <span className={`mr-3 ${thisPath === id ? 'active dark:text-white' : ''} group-hover:text-white`}>
                     {icon}
                 </span>
-                <span className={`space-x-2 text-sm  group-hover:text-white drop-shadow-sm`}>
+                <span className={`space-x-2 text-sm ${thisPath === id ? 'active dark:text-white' : ''} dark:text-blue-gray-100 group-hover:text-white  drop-shadow-sm`}>
                     {label}
                 </span>
                 {(childPath && childPath.length != 0) &&

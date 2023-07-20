@@ -53,9 +53,9 @@ const Login = ({
                     <div className="flex flex-col items-center py-20 xl:py-0 ">
                         <div className="flex flex-col items-center pb-5">
                             <img src={logoPegadaian} className="w-96 py-5"/>
-                            <span className="text-2xl text-slate-800 font-semibold ">{!inForget ? "Sign In Super Admin" : "Forgotten Password ?"}</span>
+                            <span className="text-2xl text-blue-gray-dark font-semibold ">{!inForget ? "Sign In Super Admin" : "Forgotten Password ?"}</span>
                             {
-                                inForget && (<span className="text-slate-700 py-5">Enter your email to reset your password:</span>)
+                                inForget && (<span className="text-blue-gray-700 py-5">Enter your email to reset your password:</span>)
                             }
                         </div>
 

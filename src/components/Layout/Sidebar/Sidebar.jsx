@@ -1,11 +1,13 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { AiOutlineHome, AiOutlineGold } from "react-icons/ai"
 import { Dialog, Transition } from "@headlessui/react";
 import { BsFillSkipBackwardFill } from "react-icons/bs"
 import { AiOutlineBank } from "react-icons/ai"
 import { LuBanknote } from "react-icons/lu"
-import { AiOutlineDown } from "react-icons/ai"
-
+import { BsUsbMicro } from "react-icons/bs"
+import { MdOutlinePayments } from "react-icons/md"
+import { GiMetalBar } from "react-icons/gi"
+import { BiSolidUserDetail } from "react-icons/bi"
 import MenuItem from "./MenuItem";
 
 const Sidebar = ({
@@ -90,7 +92,7 @@ const Sidebar = ({
                 {
                     label: 'Transaksi Mikro',
                     path: '/superadmin/gadai_tabungan_emas',
-                    icon: <AiOutlineGold />,
+                    icon: <BsUsbMicro />,
                     childPath: []
                 },
             ]
@@ -101,7 +103,7 @@ const Sidebar = ({
                 {
                     label: 'Transaksi Pembayaran',
                     path: '/superadmin/gadai_tabungan_emas',
-                    icon: <AiOutlineGold />,
+                    icon: <MdOutlinePayments />,
                     childPath: []
                 },
             ]
@@ -112,13 +114,13 @@ const Sidebar = ({
                 {
                     label: 'Produk Logam Mulia',
                     path: '/superadmin/gadai_tabungan_emas',
-                    icon: <AiOutlineGold />,
+                    icon: <GiMetalBar />,
                     childPath: []
                 },
                 {
                     label: 'Mulia User Cart',
                     path: '/superadmin/gadai_tabungan_emas',
-                    icon: <AiOutlineGold />,
+                    icon: <BiSolidUserDetail />,
                     childPath: []
                 },
             ]
@@ -169,8 +171,8 @@ const Sidebar = ({
                                     <Dialog.Panel>
                                         <div className="h-screen w-64 px-3 py-4 overflow-y-auto text-sm border-r-2 rounded-tr-lg rounded-br-lg bg-white">
                                             <ul>
-                                                <div onClick={() => handleClose()} className="flex items-end justify-end hover:bg-slate-500 hover:rounded-lg cursor-pointer group">
-                                                    <div className="group-hover:bg-slate-500 group-hover:text-white px-2 py-1 rounded-full cursor-pointer text-lg">
+                                                <div onClick={() => handleClose()} className="flex items-end justify-end hover:bg-blue-gray-500 hover:rounded-lg cursor-pointer group">
+                                                    <div className="group-hover:bg-blue-gray-500 group-hover:text-white px-2 py-1 rounded-full cursor-pointer text-lg">
                                                         <BsFillSkipBackwardFill />
                                                     </div>
                                                 </div>
@@ -200,12 +202,12 @@ const Sidebar = ({
                         </Transition>
                     </div>
                 ) : (
-                    <div className="h-full w-64 px-4 overflow-y-auto text-sm border-r-2 bg-slate-50">
+                    <div className="h-full w-64 px-4 overflow-y-auto text-sm border-r-2 dark:border-blue-gray-600 transition-colors duration-150">
                         <ul className="">
                             {menuData.map((menuItem, index) => (
                                 <li key={index} className="pt-2">
-                                    <div className="text-1xl text-slate-700 font-semibold uppercase pb-2 pt-2 ">{menuItem.label}</div>
-                                    <hr />
+                                    <div className="text-1xl text-blue-gray-700 dark:text-blue-gray-200 font-semibold uppercase pb-2 pt-2 ">{menuItem.label}</div>
+                                    <hr class="h-px bg-gray-200 border-0 dark:bg-blue-gray-600" />
                                     <ul className="">
                                         {menuItem.children.map((childItem, childIndex) => (
                                             <MenuItem

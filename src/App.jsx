@@ -4,7 +4,6 @@ import ForgetPage from './features/auth/ForgetPage';
 import './index.css'
 import DashboardPage from './features/dashboard/DashboardPage';
 import GadaiTabunganEmas from './features/gadai/gadai_tabungan_emas/GadaiTabunganEmas';
-import Pages from './pages/Pages';
 
 function App() {
 

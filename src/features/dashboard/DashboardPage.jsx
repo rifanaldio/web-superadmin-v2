@@ -19,6 +19,7 @@ const DashboardPage = ({
 }) => {
 
   const cardTotal = [
+
     {
       value: "120",
       label: "total user pds",
@@ -168,13 +169,13 @@ const DashboardPage = ({
             {/* Hint */}
 
 
-            <div className="flex h-72 mt-5 w-full">
+            {/* <div className="flex h-72 mt-5 w-full">
               <div className="basis-[30%] ">
                 <div
                   className={`font-nutino bg-white max-w-sm border border-gray-300 rounded-bl-md shadow-md`}
                 >
                   <div className="flex flex-col w-full">
-                    <div className="flex flex-row justify-center p-2 space-x-4 bg-slate-100 border-b-2 ">
+                    <div className="flex flex-row justify-center p-2 space-x-4 bg-blue-gray-100 border-b-2 ">
                       <button className="block py-2 px-4 rounded-lg uppercase ">
                         gadai hari ini
                       </button>
@@ -188,8 +189,8 @@ const DashboardPage = ({
                   </div>
                 </div>
               </div>
-              <div className="basis-[70%] bg-slate-300">2</div>
-            </div>
+              <div className="basis-[70%] bg-blue-gray-300">2</div>
+            </div> */}
 
             <Hint
               className="mt-5"

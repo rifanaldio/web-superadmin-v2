@@ -38,7 +38,7 @@ const Layout = ({
         <Navbar />
       </div>
       <div className="pt-15 flex flex-col md:flex-row h-screen">
-        <div className="lg:w-72 lg:pb-2 bg-white">
+        <div className="lg:w-72 lg:pb-2 bg-white dark:bg-blue-gray-800">
           {/* Hidden When Resolution LG Start */}
           <button
             onClick={() => handleOpen()}
@@ -58,10 +58,10 @@ const Layout = ({
             />
           </div>
         </div>
-        <main className="h-full w-full bg-slate-100 overflow-hidden font-nutino">
+        <main className="h-full w-full bg-blue-gray-100 dark:bg-blue-gray-800 overflow-hidden font-nutino">
           {
             useBreadcumb && (
-              <div className="w-full bg-white p-2">
+              <div className="w-full bg-white p-2 dark:bg-blue-gray-800">
                 <Breadcrumb data={breadcumb} />
               </div>
             )
@@ -71,8 +71,8 @@ const Layout = ({
               {children}
             </div>
           </div>
-          <footer className="fixed bottom-0 flex bg-white w-full">
-            <span className="ml-4 py-1 text- text-xs">
+          <footer className="fixed bottom-0 flex bg-white dark:bg-blue-gray-700 transition-colors duration-150 w-full">
+            <span className="ml-4 py-1 dark:text-white text-xs">
             &copy; 2023 PT PEGADAIAN.
             </span>
           </footer>

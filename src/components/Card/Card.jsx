@@ -25,7 +25,7 @@ const Card = ({
     <>
       <div
         key={id}
-        className={`relative cursor-pointer transition-all hover:scale-95 duration-300 font-nutino px-5 pt-4  bg-white max-w-sm border border-gray-300 rounded-md shadow-md hover:ring-1 hover:ring-hovertext group ${className}`}
+        className={`relative cursor-pointer transition-all dark:border-1 dark:border-gray-800 hover:scale-95 duration-300 font-nutino px-5 pt-4  bg-white dark:bg-gray-700 max-w-sm border border-gray-300 rounded-md shadow-md hover:ring-1 hover:ring-hovertext group ${className}`}
       >
         {usePercentation &&
           (loss != null && profit != null) && (
@@ -38,19 +38,19 @@ const Card = ({
         }
 
         <div
-          className={`uppercase font-serif whitespace-nowrap ${usePercentation ? (onlyNull && 'mt-5') : 'mt-5'} text-slate-700 text-xs ${!small && `lg:text-sm max-h-10`} h-5 `}
+          className={`uppercase font-serif dark:text-white whitespace-nowrap ${usePercentation ? (onlyNull && 'mt-5') : 'mt-5'} text-blue-gray-700 text-xs ${!small && `lg:text-sm max-h-10`} h-5 `}
         >
           {label}
         </div>
-        <div className={`${!small ? 'text-3xl xl:text-4xl' : 'text-2xl'} py-2 text-slate-600`}>
+        <div className={`${!small ? 'text-3xl xl:text-4xl' : 'text-2xl'} py-2 text-blue-gray-600 dark:text-white`}>
           {formattedValue}
         </div>
 
         <div
-          className="absolute border p-2 rounded-md shadow-md -top-5 left-3 bg-hovertext ring-1 duration-300 transition-all ring-white group-hover:border-white group-hover:transition-all group-hover:duration-300 group-hover:scale-125"
+          className="absolute  p-2 rounded-md shadow-md dark:shadow-white dark:shadow-sm -top-5 left-3 bg-hovertext dark:bg-darkbutton  duration-300 transition-all dark:ring-none group-hover:border-white dark:group-hover:border-none group-hover:transition-all group-hover:duration-300 group-hover:scale-125"
         >
           <span
-            className={`${!small ? 'text-xl lg:text-3xl' : 'text-1xl'} text-white bg-white `}
+            className={`${!small ? 'text-xl lg:text-3xl' : 'text-1xl'} text-white dark:text-blue-gray-300 `}
           >
             {icon}
           </span>

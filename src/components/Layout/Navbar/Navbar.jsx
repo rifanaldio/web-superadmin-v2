@@ -7,36 +7,48 @@ import { HiOutlineUser } from "react-icons/hi";
 import { CiLock } from "react-icons/ci"
 import { IoLogOutOutline } from "react-icons/io5"
 import { AiOutlineDown } from "react-icons/ai"
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+import useDarkSide from "./useDarkSide";
 
 const Navbar = ({
 
 }) => {
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleClick = () => {
-        setIsOpen(!isOpen)
-    }
+    const [colorTheme, setTheme] = useDarkSide();
+    const [darkSide, setDarkSide] = useState(
+        colorTheme === "light" ? true : false
+    );
+ 
+    const toggleDarkMode = (checked) => {
+        setTheme(colorTheme);
+        setDarkSide(checked);
+    };
 
     return (
         <>
-            <nav className="bg-primary border-b-2 dark:border-none py-2 pl-2 pr-10">
+            <nav className={`bg-primary dark:bg-blue-gray-800 py-2 pl-2 border-b-2 dark:border-blue-gray-600 pr-10 transition-colors duration-150`}>
                 <div className="flex justify-between items-center ">
                     <div className="">
                         <Link to={`/superadmin/dashboard`} className="flex items-center">
                             <img src={logoPegadaian} className="h-8 mr-3" />
                         </Link>
                     </div>
-                    <div className="flex text-sm">
-                        <div className="bg-white">
-                            
+                    <div className="flex items-center text-sm">
+                        <div className="mr-3">
+                            <DarkModeSwitch
+                                checked={darkSide}
+                                onChange={toggleDarkMode}
+                                size={20}
+                                sunColor="white"
+                                moonColor="white"
+            />
                         </div>
                         <Menu>
                             {({ open }) => (
                                 <>
                                     <Menu.Button 
                                         // onClick={handleClick}
-                                        className={` bg-green-500 text-white font-bold p-2 rounded-lg hover:bg-green-600 hover:text-white`}>
+                                        className={`transition-colors duration-150 bg-green-500 dark:bg-darkbutton dark:ring-2 dark:ring-blue-gray-400 text-white font-bold p-2 rounded-lg hover:bg-green-600 hover:text-white`}>
                                         <div className=" flex items-center text-xs">
                                             Nama Pengguna
                                             <AiOutlineDown className="ml-1"/>

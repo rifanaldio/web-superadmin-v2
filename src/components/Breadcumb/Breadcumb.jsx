@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Breadcrumb = ({ data }) => {
-    return (
+    return (  
       <nav className="flex ml-4">
         <ol className="list-none p-0 inline-flex">
           {data.map((step, index) => (
@@ -10,7 +10,7 @@ const Breadcrumb = ({ data }) => {
               <li className="flex items-center text-sm">
                 {
                   index < data.length - 1 ? (
-                    <Link to={step.link} className="text-gray-500 hover:text-sky-500 hover:underline">{step.name}</Link>
+                    <Link to={step.link} className="text-gray-500 dark:text-white hover:text-sky-500 hover:underline">{step.name}</Link>
                   ) : (
                     <span className="text-gray-500">{step.name}</span>
                   )
