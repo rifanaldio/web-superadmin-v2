@@ -25,7 +25,7 @@ const Card = ({
     <>
       <div
         key={id}
-        className={`relative cursor-pointer transition-all dark:border-1 dark:border-gray-800 hover:scale-95 duration-300 font-nutino px-5 pt-4  bg-white dark:bg-gray-700 max-w-sm border border-gray-300 rounded-md shadow-md hover:ring-1 hover:ring-hovertext group ${className}`}
+        className={`relative cursor-pointer transition-all dark:border-1 dark:border-gray-800 hover:scale-95 duration-1000 font-nutino px-5 pt-4  bg-white dark:bg-gray-700 max-w-sm border border-gray-300 rounded-md shadow-md hover:ring-1 hover:ring-hovertext dark:ring-0 group ${className}`}
       >
         {usePercentation &&
           (loss != null && profit != null) && (
@@ -50,7 +50,7 @@ const Card = ({
           className="absolute  p-2 rounded-md shadow-md dark:shadow-white dark:shadow-sm -top-5 left-3 bg-hovertext dark:bg-darkbutton  duration-300 transition-all dark:ring-none group-hover:border-white dark:group-hover:border-none group-hover:transition-all group-hover:duration-300 group-hover:scale-125"
         >
           <span
-            className={`${!small ? 'text-xl lg:text-3xl' : 'text-1xl'} text-white dark:text-blue-gray-300 `}
+            className={`${!small ? 'text-xl lg:text-3xl' : 'text-1xl'} text-white `}
           >
             {icon}
           </span>

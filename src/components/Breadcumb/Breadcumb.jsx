@@ -10,7 +10,7 @@ const Breadcrumb = ({ data }) => {
               <li className="flex items-center text-sm">
                 {
                   index < data.length - 1 ? (
-                    <Link to={step.link} className="text-gray-500 dark:text-white hover:text-sky-500 hover:underline">{step.name}</Link>
+                    <Link to={step.link} className=" dark:text-white hover:text-sky-500 hover:underline">{step.name}</Link>
                   ) : (
                     <span className="text-gray-500">{step.name}</span>
                   )

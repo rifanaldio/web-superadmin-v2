@@ -38,7 +38,7 @@ const Layout = ({
         <Navbar />
       </div>
       <div className="pt-15 flex flex-col md:flex-row h-screen">
-        <div className="lg:w-72 lg:pb-2 bg-white dark:bg-blue-gray-800">
+        <div className="lg:w-72 lg:pb-2 bg-white dark:bg-blue-gray-800 transition-all duration-1000">
           {/* Hidden When Resolution LG Start */}
           <button
             onClick={() => handleOpen()}
@@ -49,7 +49,7 @@ const Layout = ({
           </button>
           {/* Hidden When Resolution LG End */}
 
-          <div className={`overflow-y-auto h-full duration-150 transition-transform -translate-x-full lg:translate-x-0 hidden lg:block`}>
+          <div className={`overflow-y-auto h-full duration-1000 transition-transform -translate-x-full lg:translate-x-0 hidden lg:block`}>
             <Sidebar
               open={open}
               onClose={() => {
@@ -61,17 +61,17 @@ const Layout = ({
         <main className="h-full w-full bg-blue-gray-100 dark:bg-blue-gray-800 overflow-hidden font-nutino">
           {
             useBreadcumb && (
-              <div className="w-full bg-white p-2 dark:bg-blue-gray-800">
+              <div className="w-full bg-white ml-3  mt-2 md:rounded-none md:mt-0 md:ml-0  p-2 dark:bg-blue-gray-700">
                 <Breadcrumb data={breadcumb} />
               </div>
             )
           }
-          <div className={`my-3 mx-3 ${fit && `bg-white rounded-tl-lg rounded-bl-lg`}`}>
-            <div className="py-5 mb-20 pl-2 w-full max-h-[49rem] sm:max-h-[50rem] md:max-h-[53rem] lg:max-h-[55rem] overflow-y-auto overflow-x-hidden">
+          <div className={`my-3 ml-3 ${fit && `bg-white rounded-tl-lg rounded-bl-lg`}`}>
+            <div className="py-5 mb-20 pl-2 w-full max-h-[49rem] sm:max-h-[50rem] md:max-h-[53rem] lg:max-h-[51rem] overflow-y-auto overflow-x-hidden">
               {children}
             </div>
           </div>
-          <footer className="fixed bottom-0 flex bg-white dark:bg-blue-gray-700 transition-colors duration-150 w-full">
+          <footer className="fixed bottom-0 flex bg-white dark:bg-blue-gray-700 transition-colors duration-1000 w-full">
             <span className="ml-4 py-1 dark:text-white text-xs">
             &copy; 2023 PT PEGADAIAN.
             </span>
