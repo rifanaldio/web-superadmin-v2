@@ -26,7 +26,7 @@ const Navbar = ({
 
     return (
         <>
-            <nav className={`bg-primary dark:bg-blue-gray-800 py-2 pl-2 border-b-2 dark:border-blue-gray-600 pr-10 transition-colors duration-1000`}>
+            <nav className={`bg-primary dark:bg-blue-gray-800 py-2 pl-2 border-b-2 dark:border-blue-gray-600 pr-10 transition-colors duration-150`}>
                 <div className="flex justify-between items-center ">
                     <div className="">
                         <Link to={`/superadmin/dashboard`} className="flex items-center">
@@ -48,7 +48,7 @@ const Navbar = ({
                                 <>
                                     <Menu.Button 
                                         // onClick={handleClick}
-                                        className={`transition-colors duration-1000 bg-green-500 dark:bg-darkbutton dark:ring-2 dark:ring-blue-gray-400 text-white font-bold p-2 rounded-lg hover:bg-green-600 hover:text-white`}>
+                                        className={`transition-colors duration-150 bg-green-500 dark:bg-darkbutton dark:ring-2 dark:ring-blue-gray-400 text-white font-bold p-2 rounded-lg hover:bg-green-600 hover:text-white`}>
                                         <div className=" flex items-center text-xs">
                                             Nama Pengguna
                                             <AiOutlineDown className="ml-1"/>

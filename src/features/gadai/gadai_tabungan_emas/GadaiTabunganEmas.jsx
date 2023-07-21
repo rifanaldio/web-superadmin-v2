@@ -19,146 +19,146 @@ function GadaiTabunganEmas() {
       link: '/superadmin/gadai_tabungan_emas'
     },
   ]
-  // const defaultData = ([
-  //   {
-  //     name: "John Michael",
-  //     job: "Lorem ipsum dolor sit amet.",
-  //     online: true,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, iusto.",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  //   {
-  //     name: "John Michael",
-  //     job: "Manager",
-  //     online: false,
-  //     date: "23/04/18",
-  //   },
-  // ])
+  const defaultData = ([
+    {
+      name: "John Michael",
+      job: "Lorem ipsum dolor sit amet.",
+      online: true,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, iusto.",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+      online: false,
+      date: "23/04/18",
+    },
+  ])
 
 
   return (
@@ -170,7 +170,7 @@ function GadaiTabunganEmas() {
             checked={true}
             showIndex={true}
             showAction={false}
-            defaultData={[]}
+            defaultData={defaultData || []}
             actions={[
               new TableWrapper.action(
                 "Create",
@@ -194,7 +194,7 @@ function GadaiTabunganEmas() {
               {
                 show: true,
                 label: "Status",
-                render: (item) => item.online == true ? <button className="bg-red-50 p-2">"Online"</button>  : "Offline"
+                render: (item) => item.online == true ? "Online" : "Offline"
               },
               {
                 show: true,

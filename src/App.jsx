@@ -14,7 +14,7 @@ function App() {
           <Route path='/superadmin/login' element={<LoginPage />} />
           <Route path='/superadmin/forget' element={<ForgetPage />} />
           <Route path='/superadmin/dashboard' element={<DashboardPage />}/>
-          <Route path='/superadmin/gadai_tabungan_emas' element={<GadaiTabunganEmas />} />
+          <Route path='/superadmin/gadai_tabungan_emas' element={<GadaiTabunganEmas />} err />
         </Routes>
     </BrowserRouter>
     </>

@@ -20,9 +20,10 @@ const MenuItem = ({ id, label, path, childPath, icon }) => {
             key={id}
             onClick={childPath && (childPath.length != 0 ? toggleDropdown : null)}
             to={path}
-            className={`block font-nutino my-2 py-2 px-4 dark:text-blue-gray-400 hover:bg-primary hover:text-white rounded group hover:ring-1 dark:ring-white hover:ring-primaryyellow 
-                    ${thisPath === id ? `active bg-primary text-white ring-1 ring-primaryyellow dark:ring-none dark:ring-white` : 'bg-none'}
-                    `}
+            className={
+                `block font-nutino my-2 py-2 px-4 dark:text-blue-gray-400 hover:bg-primary dark:hover:bg-light-green-600 hover:text-white rounded group hover:ring-1 dark:hover:ring-0 hover:ring-primaryyellow 
+            ${thisPath === id ? `active bg-primary dark:bg-light-green-600 text-white ring-1 ring-primaryyellow dark:ring-0` : 'bg-none'} transition-color duration-500`
+            }
         >
             <div className="flex items-center px-2">
                 <span className={`mr-3 ${thisPath === id ? 'active dark:text-white' : ''} group-hover:text-white`}>

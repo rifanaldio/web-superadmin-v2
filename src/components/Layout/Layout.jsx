@@ -61,7 +61,7 @@ const Layout = ({
         <main className="h-full w-full bg-blue-gray-100 dark:bg-blue-gray-800 overflow-hidden font-nutino">
           {
             useBreadcumb && (
-              <div className="w-full bg-white ml-3  mt-2 md:rounded-none md:mt-0 md:ml-0  p-2 dark:bg-blue-gray-700">
+              <div className="w-full bg-white ml-3  mt-2 md:rounded-none md:mt-0 md:ml-0  p-2 dark:bg-blue-gray-700 transition-all duration-1000">
                 <Breadcrumb data={breadcumb} />
               </div>
             )
