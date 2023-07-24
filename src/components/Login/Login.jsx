@@ -12,7 +12,13 @@ const Login = ({
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
     const inForget = forget;
-    const passInvalid = password.length < 8;
+    const passInvalid = password.length < 8
+    const minLength = 8;
+
+    const isPasswordInvalid = () => {
+        return password.length >= minLength;
+    }
+
     const dispatch = useDispatch()
 
     const { user, isSuccess } = useSelector((state) => state.auth);
@@ -67,8 +73,8 @@ const Login = ({
                                         Email
                                     </label>
                                     <input
-                                        className="shadow border
-                                        invalid:border-red-500 valid:border-lime-500 peer appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        className={`shadow border
+                                         valid:border-green-500 invalid:border-red-500 peer appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                                         value={email}
                                         onChange={handleChange(setEmail)}
                                         id="email"
@@ -86,16 +92,18 @@ const Login = ({
                                                 Password
                                             </label>
                                             <input
-                                                className={`shadow appearance-none border ${passInvalid ? 'border-red-500' : "border-lime-500"}  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
+                                                className={`shadow appearance-none border ${isPasswordInvalid() ? 'border-green-500' : "border-red-500"}  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
                                                 value={password}
                                                 onChange={handleChange(setPassword)}
                                                 id="password"
                                                 type="password"
                                                 placeholder="********" />
-                                            {
-                                                passInvalid &&
-                                                <p className="text-red-500 text-xs italic">Please choose a password.</p>
-                                            }
+                                            
+                                            {!isPasswordInvalid() && (
+                                                <p className="text-red-500 text-xs">
+                                                    Password must be at least {minLength} characters long.
+                                                </p>
+                                            )}                                            
                                         </div>
                                     )
                                 }
@@ -125,7 +133,7 @@ const Login = ({
                 </div>
                 <div className="order-1 lg:order-2 w-full place-items-end xl:w-3/5 h-full bg-login bg-cover bg-center flex justify-center items-center">
                     <div className="p-8 text-white flex flex-col ">
-                        <h1 className="text-2xl sm:text-4xl lg:text-6xl transition-all duration-100 font-bold mb-4">Pegadaian Digital Service</h1>
+                        <h1 className="text-2xl sm:text-4xl lg:text-6xl transition-color font-bold mb-4">Pegadaian Digital Service</h1>
                         <p>Mengatasi Masalah tanpa Masalah.</p>
                     </div>
                 </div>

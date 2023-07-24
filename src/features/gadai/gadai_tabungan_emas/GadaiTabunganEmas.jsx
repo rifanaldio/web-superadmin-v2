@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Papper from "../../../components/Layout/Papper/Papper";
 import TableWrapper from "../../../components/Table/TableWrapper";
 import { AiOutlinePlus } from "react-icons/ai"
-import Modal from "../../../components/Modal/Modal";
+import { HiOutlinePencilSquare } from "react-icons/hi2"
 import FormGadaiTabunganEmas from "./FormGadaiTabunganEmas";
 
 function GadaiTabunganEmas() {
 
   const [openForm , setOpenForm] = useState(false)
+  const [setlectedItem , setSelectedItem] = useState(null)
 
   const dataBreadcumb = [
     {
@@ -21,13 +22,13 @@ function GadaiTabunganEmas() {
   ]
   const defaultData = ([
     {
-      name: "John Michael",
+      name: "Rifan",
       job: "Lorem ipsum dolor sit amet.",
       online: true,
       date: "23/04/18",
     },
     {
-      name: "John Michael",
+      name: "Aldio",
       job: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, iusto.",
       online: false,
       date: "23/04/18",
@@ -39,13 +40,13 @@ function GadaiTabunganEmas() {
       date: "23/04/18",
     },
     {
-      name: "John Michael",
+      name: "Sitrisna",
       job: "Manager",
       online: false,
       date: "23/04/18",
     },
     {
-      name: "John Michael",
+      name: "Nawaitu",
       job: "Manager",
       online: false,
       date: "23/04/18",
@@ -177,7 +178,20 @@ function GadaiTabunganEmas() {
                 <AiOutlinePlus />,
                 () => {
                   setOpenForm(true)
-                }
+                },
+                "icon"
+              )
+            ]}
+            itemActions={[
+              new TableWrapper.action(
+                "Edit",
+                <HiOutlinePencilSquare />,
+                (item) => {
+                  setSelectedItem(item)
+                  setOpenForm(true)
+                },
+                "icon",
+                "blue"
               )
             ]}
             columns={[
@@ -204,6 +218,7 @@ function GadaiTabunganEmas() {
             ]}
           />
           <FormGadaiTabunganEmas 
+            item={setlectedItem}
             open={openForm}
             onRequestClose={() => {
               setOpenForm(false)

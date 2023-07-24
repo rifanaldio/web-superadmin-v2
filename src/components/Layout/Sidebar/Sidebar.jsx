@@ -70,7 +70,7 @@ const Sidebar = ({
                     label: 'Rule Perkiraan Pinjaman',
                     index: 'Rule Perkiraan Pinjaman',
                     icon: <LuBanknote />,
-                    path: '/internal/product',
+                    path: '/superadmin/rule_perkiraan_pinjaman',
                     childPath: []
                 }
             ]

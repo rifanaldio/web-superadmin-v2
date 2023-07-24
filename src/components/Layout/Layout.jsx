@@ -38,7 +38,7 @@ const Layout = ({
         <Navbar />
       </div>
       <div className="pt-15 flex flex-col md:flex-row h-screen">
-        <div className="lg:w-72 lg:pb-2 bg-white dark:bg-blue-gray-800 transition-all duration-1000">
+        <div className="lg:w-72 lg:pb-2 bg-white dark:bg-blue-gray-800 transition-color">
           {/* Hidden When Resolution LG Start */}
           <button
             onClick={() => handleOpen()}
@@ -61,13 +61,13 @@ const Layout = ({
         <main className="h-full w-full bg-blue-gray-100 dark:bg-blue-gray-800 overflow-hidden font-nutino">
           {
             useBreadcumb && (
-              <div className="w-full bg-white ml-3  mt-2 md:rounded-none md:mt-0 md:ml-0  p-2 dark:bg-blue-gray-700 transition-all duration-1000">
+              <div className="w-full bg-white ml-3  mt-2 md:rounded-none md:mt-0 md:ml-0  p-2 dark:bg-blue-gray-700 transition-color">
                 <Breadcrumb data={breadcumb} />
               </div>
             )
           }
           <div className={`my-3 ml-3 ${fit && `bg-white rounded-tl-lg rounded-bl-lg`}`}>
-            <div className="py-5 mb-20 pl-2 w-full max-h-[49rem] sm:max-h-[50rem] md:max-h-[53rem] lg:max-h-[51rem] overflow-y-auto overflow-x-hidden">
+            <div className={`py-5 mb-20 pl-2 w-full max-h-[49rem] sm:max-h-[50rem] md:max-h-[53rem] lg:max-h-[51rem] ${fit && 'dark:bg-blue-gray-700'} overflow-y-auto overflow-x-hidden`}>
               {children}
             </div>
           </div>

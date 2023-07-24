@@ -17,21 +17,24 @@ const TableWrapper = ({
     useCommandBar = true,
     usePagination = true,
     backTo = false,
-    actions = []
+    actions = [],
+    itemActions = [],
 }) => {
 
     const [data, setData] = useState(defaultData)
 
     const defaultAction = [
         new action(
-            "reload",
+            "Reload",
             <TfiReload />,
-            () => alert("Berhasil reload")
+            () => alert("Berhasil reload"),
+            "icon"
         ),
         new action(
             "Search",
             <HiOutlineMagnifyingGlass />,
-            () => alert("Berhasil Cari")
+            () => alert("Berhasil Cari"),
+            "icon"
         )
     ]
 
@@ -59,6 +62,7 @@ const TableWrapper = ({
                                 showIndex={showIndex}
                                 data={data}
                                 showAction={showAction}
+                                itemActions={itemActions}
                                 columns={columns.filter((d) =>
                                     d.show === undefined ? true : d.show
                                 )}

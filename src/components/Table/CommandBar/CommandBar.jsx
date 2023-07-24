@@ -14,6 +14,7 @@ const CommandBar = ({
 
     var actionsWType = [];
     var actionsList = [];
+    console.log(actionsList);
 
     try {
         actions.map((d,index) => {
@@ -37,16 +38,19 @@ const CommandBar = ({
                     {title && <span className="font-sans text-xl font-bold">{title}</span>}
 
                 </div>
-                <div className="flex justify-end items-center bg-blue-gray-100 py-1">
+                <div className="flex justify-end items-center bg-blue-gray-100 dark:bg-blue-gray-500 transition-color py-1 rounded-tl-lg">
                     {actionsWType.map((e, i) => {
                             return (
                                 <>
+                                <div>
                                     <ButtonAction
                                         key={`commandbar-action-${i}`}
                                         onClick={e.onClick}
                                         icon={e.icon}
                                         label={e.label}
+                                        type={e.type}
                                     />
+                                </div>
                                 </>
                             );
                         })}

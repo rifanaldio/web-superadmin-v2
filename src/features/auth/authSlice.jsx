@@ -20,6 +20,7 @@ export const LoginUser = createAsyncThunk("user/LoginUser", async (user, thunkAP
         // console.log(response.data);
         // alert.successLogin()
         // return response.data;
+        localStorage.setItem("User",JSON.stringify(user));
         return true;
     } catch (error) {
         // alert.errorLogin()

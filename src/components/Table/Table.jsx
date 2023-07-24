@@ -8,13 +8,15 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import Pagination from "./Pagination/Pagination";
+import _ from "lodash"
+import ButtonAction from "./ButtonAction/ButtonAction";
 
 const TABLE_HEAD = ["Action", "Member", "Function", "Status", "Employed"];
 
 const Table = ({
     checked = false,
     showIndex = true,
-    showAction = true,
+    showActionColumns = true,
     columns = [],
     data = [],
     usePagination = true,
@@ -23,6 +25,23 @@ const Table = ({
 
     const [selectedItems, setSelectedItems] = useState([]);
     const [masterCheckbox, setMasterCheckbox] = useState(false);
+
+    const getItemActions = (item) => {
+        console.log(item);
+        let newItemActions = itemActions.filter((d) =>
+          typeof d.show === "boolean"
+            ? d.show
+            : typeof d.show === "function"
+              ? d.show(item)
+              : true
+        );
+        let newNewItemActions = _.filter(newItemActions, function (d) {
+            return d;
+        });
+
+        console.log(newItemActions);
+        return newNewItemActions;
+      };
 
     //handle checkbox for table body
     const handleCheckBox = (item) => {
@@ -50,14 +69,14 @@ const Table = ({
     // };
 
     const content = (
-        <CardBody className="overflow-scroll px-0 py-0">
+        <CardBody className="overflow-scroll px-0 py-0 ">
                 <table className="w-full min-w-max text-left">
-                    <thead className="sticky -top-1 bg-blue-gray-100 z-10">
+                    <thead className="sticky -top-1 bg-blue-gray-100 dark:bg-blue-gray-500 transition-color z-10">
                         <tr className="">
                             {
                                 showIndex && (
                                     <th
-                                        className=" py-5 border-blue-gray-100 bg-blue-gray-50/50 transition-colors hover:bg-blue-gray-50"
+                                        className=" py-5 px-2 border-blue-gray-100 bg-blue-gray-50/50 transition-colors hover:bg-blue-gray-50"
                                     >
                                         <Typography
                                             variant="small"
@@ -72,13 +91,6 @@ const Table = ({
                             {
                                 checked && (
                                     <th onClick={handleMasterCheckboxChange} className="cursor-pointer  py-5 border-blue-gray-100 bg-blue-gray-50/50 transition-colors hover:bg-blue-gray-50 group">
-                                        {/* <div className="flex items-center justify-center h-0 leading-none opacity-70 font-bold">
-                                            <Checkbox
-                                                color="green"
-                                                defaultChecked={false}
-                                                checked={masterCheckbox}
-                                                label={<Typography className="group" color="blue-gray">Select All</Typography>} />
-                                        </div> */}
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
@@ -91,14 +103,12 @@ const Table = ({
                             }
 
                             {
-                                showAction && (
-                                    <th
-                                        className="cursor-pointer  border-blue-gray-100 bg-blue-gray-50/50 transition-colors hover:bg-blue-gray-50"
-                                    >
+                                showActionColumns && (
+                                    <th className="py-5 border-blue-gray-100 bg-blue-gray-50/50 transition-colors hover:bg-blue-gray-50 group">
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="flex items-center justify-between gap-2 font-normal leading-none opacity-70"
+                                            className="flex items-center justify-center gap-2 font-normal leading-none opacity-70"
                                         >
                                             Action
                                         </Typography>
@@ -127,12 +137,13 @@ const Table = ({
                             ))}
                         </tr>
                     </thead>
-                    <tbody className="h-screen overflow-y-auto text-sm dark:bg-blue-gray-800">
+                    <tbody className="h-screen overflow-y-auto text-sm dark:bg-blue-gray-800 transition-color">
                         {data.map((d, index) => {
+                            let dItemActions = getItemActions(d);
                             return (
                                 <tr
                                     key={index}
-                                    className={`hover:bg-gray-200 dark:hover:bg-blue-gray-600 min-h-[180px] ${selectedItems.includes(d) && 'bg-gray-200'}`}
+                                    className={`hover:bg-gray-200 dark:hover:bg-blue-gray-600 transition-color min-h-[180px] ${selectedItems.includes(d) && 'bg-gray-200 dark:bg-blue-gray-600'}`}
                                 >
                                     {
                                         showIndex &&
@@ -151,9 +162,30 @@ const Table = ({
                                         </td>
                                     }
                                     {
+                                        showActionColumns && (
+                                            <td className="overflow-hidden">
+                                            <div className="flex items-center justify-center">
+                                                {
+                                                    itemActions.length > 0 && (
+                                                        <td>
+                                                            <ButtonAction
+                                                            label={dItemActions[0].label}
+                                                            icon={dItemActions[0].icon}
+                                                            onClick={() => dItemActions[0].onClick(d,index)}
+                                                            type={dItemActions[0].type}
+                                                            color={dItemActions[0].color}
+                                                            />
+                                                        </td>
+                                                    )
+                                                }
+                                            </div>
+                                        </td>
+                                        )
+                                    }
+                                    {
                                         columns.map((col) => (
                                             <td className="overflow-hidden">
-                                                <Typography color="blue-gray" className="font-normal text-sm px-4 dark:text-white">
+                                                <Typography color="blue-gray" className="font-normal text-sm px-4 transition-color duration-1000 dark:text-white">
                                                     {col.render(d, index)}
                                                 </Typography>
                                             </td>

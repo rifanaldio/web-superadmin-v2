@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logoPegadaian from "../../../assets/logo.png"
 import { Link } from "react-router-dom";
 import { Menu, Transition } from "@headlessui/react";
@@ -18,6 +18,14 @@ const Navbar = ({
     const [darkSide, setDarkSide] = useState(
         colorTheme === "light" ? true : false
     );
+    const [name,setName] = useState("")
+
+    useEffect(() => {
+        const userName = JSON.parse(localStorage.getItem("User"));
+        setName(userName.email)
+        console.log(userName.email);
+    }, []);
+    
  
     const toggleDarkMode = (checked) => {
         setTheme(colorTheme);
@@ -50,7 +58,7 @@ const Navbar = ({
                                         // onClick={handleClick}
                                         className={`transition-colors duration-150 bg-green-500 dark:bg-darkbutton dark:ring-2 dark:ring-blue-gray-400 text-white font-bold p-2 rounded-lg hover:bg-green-600 hover:text-white`}>
                                         <div className=" flex items-center text-xs">
-                                            Nama Pengguna
+                                            {name}
                                             <AiOutlineDown className="ml-1"/>
                                         </div>
                                         {/* <div className="font-bold">
@@ -67,14 +75,14 @@ const Navbar = ({
                                             leaveFrom="translate-x-0"
                                             leaveTo="-translate-x-full"
                                         >
-                                            <div className="absolute top-11 right-10 border-2   w-40 h-32 rounded-lg bg-white z-50 shadow-lg">
+                                            <div className="absolute top-11 right-10 border-2 dark:border-blue-gray-80 w-40 h-32 rounded-lg bg-white dark:bg-blue-gray-700 z-50 shadow-lg">
                                                 <Menu.Items static>
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <Link
                                                                 className={`${active
                                                                     ? 'bg-bghover text-gray-900'
-                                                                    : 'text-gray-700'
+                                                                    : 'text-gray-700 dark:text-blue-gray-100'
                                                                     } flex mt-2 items-center px-4 py-2 text-sm`}
                                                                 to={`/superadmin/profile`}
                                                             >
@@ -92,7 +100,7 @@ const Navbar = ({
                                                             <Link
                                                                 className={`${active
                                                                     ? 'bg-bghover text-gray-900'
-                                                                    : 'text-gray-700'
+                                                                    : 'text-gray-700 dark:text-blue-gray-100'
                                                                     } flex items-center px-4 py-2 text-sm`}
                                                                 to={"/documentation"}
                                                             >
@@ -110,7 +118,7 @@ const Navbar = ({
                                                         {({ active }) => (
                                                             <div className={`${active
                                                                 ? 'bg-bghover text-gray-900'
-                                                                : 'text-gray-700'
+                                                                : 'text-gray-700 dark:text-blue-gray-100'
                                                                 } flex items-center px-4 py-2 text-sm cursor-pointer`}>
                                                                 <span className="mr-4">
                                                                     <IoLogOutOutline />

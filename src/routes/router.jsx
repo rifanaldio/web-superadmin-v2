@@ -5,6 +5,7 @@ import DashboardPage from "../features/dashboard/DashboardPage";
 import GadaiTabunganEmas from "../features/gadai/gadai_tabungan_emas/GadaiTabunganEmas";
 import Pages from "../pages/Pages";
 import { URL } from "../util/Constant";
+import RulePerkiraanPinjaman from "../features/gadai/rule_perkiraan_pinjaman/RulePerkiraanPinjaman";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     {
         path:`${URL}/gadai_tabungan_emas`,
         element : <Pages elemetPages={<GadaiTabunganEmas />} title="Gadai Tabungan Emas - Pegadaian" />,
+    },
+    {
+        path:`${URL}/rule_perkiraan_pinjaman`,
+        element : <Pages elemetPages={<RulePerkiraanPinjaman />} title="Rule Perkiraan Pinjaman - Pegadaian" />,
     },
 
 ])

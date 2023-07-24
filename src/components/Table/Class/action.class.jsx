@@ -5,10 +5,14 @@ class action {
       label = 'string',
       icon = <HiOutlineMagnifyingGlass />,
       onClick = null,
+      type = 'button',
+      color = ''
     ) {
       this.label = label
       this.icon = icon
       this.onClick = onClick
+      this.type = type
+      this.color = color
     }
   }
   
