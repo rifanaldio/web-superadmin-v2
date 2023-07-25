@@ -9,6 +9,8 @@ import RulePerkiraanPinjaman from './features/gadai/rule_perkiraan_pinjaman/Rule
 
 function App() {
 
+  const test = ""
+
   return (
     <>
     <BrowserRouter>
