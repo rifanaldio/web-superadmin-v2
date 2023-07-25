@@ -19,9 +19,11 @@ const TableWrapper = ({
     backTo = false,
     actions = [],
     itemActions = [],
+    useFilter = true
 }) => {
 
     const [data, setData] = useState(defaultData)
+    const [showFilter , setShowFilter] = useState(useFilter)
 
     const defaultAction = [
         new action(
@@ -33,7 +35,7 @@ const TableWrapper = ({
         new action(
             "Search",
             <HiOutlineMagnifyingGlass />,
-            () => alert("Berhasil Cari"),
+            () => setShowFilter(!showFilter),
             "icon"
         )
     ]
@@ -66,6 +68,7 @@ const TableWrapper = ({
                                 columns={columns.filter((d) =>
                                     d.show === undefined ? true : d.show
                                 )}
+                                useFilter={showFilter}
                             />
                     }
 
